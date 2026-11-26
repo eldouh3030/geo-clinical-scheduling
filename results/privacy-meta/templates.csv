@@ -1,0 +1,60 @@
+template,kind,fragments,main_class,classes,min_group_min,min_group_median
+concept-apache-groups,concept,360,identifiable,identifiable:360,1,1.0
+concept-basic_demographics,concept,335,identifiable,identifiable:335,1,1.0
+concept-icustay_detail,concept,265,identifiable,identifiable:265,1,1.0
+concept-labsfirstday,concept,365,identifiable,identifiable:365,1,1.0
+concept-pivoted-bg,concept,365,identifiable,identifiable:365,1,1.0
+concept-pivoted-gcs,concept,415,identifiable,identifiable:415,1,1.0
+concept-pivoted-infusion,concept,325,identifiable,identifiable:325,1,1.0
+concept-pivoted-lab,concept,350,identifiable,identifiable:350,1,1.0
+concept-pivoted-med,concept,285,identifiable,identifiable:285,1,1.0
+concept-pivoted-o2,concept,355,identifiable,identifiable:355,1,1.0
+concept-pivoted-score,concept,435,identifiable,identifiable:435,1,1.0
+concept-pivoted-treatment-vasopressor,concept,400,identifiable,identifiable:400,1,1.0
+concept-pivoted-uo,concept,385,identifiable,identifiable:385,1,1.0
+concept-pivoted-vital,concept,335,identifiable,identifiable:335,1,1.0
+concept-pivoted-vital-other,concept,395,identifiable,identifiable:395,1,1.0
+concept-pivoted-weight,concept,335,identifiable,identifiable:335,1,1.0
+nb-01-explore-patient-table-2,notebook,385,identifiable,identifiable:385,1,1.0
+nb-admissiondrug-2,notebook,340,identifiable,identifiable:340,1,1.0
+nb-admissiondrug-3,notebook,360,identifiable,identifiable:360,1,1.0
+nb-admissiondrug-4,notebook,385,patients,patients:385,1,3.0
+nb-admissiondx-2,notebook,400,patients,patients:400,1,1.0
+nb-admissiondx-3,notebook,345,patients,patients:345,122,373.0
+nb-admissiondx-4,notebook,430,patients,patients:430,1,1.0
+nb-allergy-2,notebook,380,identifiable,identifiable:380,1,1.0
+nb-allergy-3,notebook,330,identifiable,identifiable:330,1,1.0
+nb-allergy-4,notebook,390,identifiable,identifiable:390,1,1.0
+nb-allergy-5,notebook,335,identifiable,identifiable:335,1,1.0
+nb-allergy-6,notebook,390,identifiable,identifiable:390,1,1.0
+nb-allergy-7,notebook,320,identifiable,identifiable:320,1,1.0
+nb-allergy-8,notebook,330,patients,patients:330,1,1.0
+nb-apache-2,notebook,385,patients,patients:385,2,6.0
+nb-careplan-1,notebook,375,patients,patients:375,1,1.0
+nb-cross-reference-apache-treatments-1,notebook,375,identifiable,identifiable:375,1,1.0
+nb-cross-reference-apache-treatments-2,notebook,335,identifiable,identifiable:335,1,1.0
+nb-diagnosis-2,notebook,410,patients,patients:377 empty:33,1,1.0
+nb-diagnosis-3,notebook,395,patients,patients:329 empty:66,1,2.0
+nb-diagnosis-4,notebook,280,patients,patients:235 empty:45,1,1.0
+nb-diagnosis-5,notebook,395,patients,patients:395,2,5.0
+nb-diagnosis-6,notebook,410,patients,patients:410,2,5.0
+nb-hospital-1,notebook,375,counted,counted:375,10,10.0
+nb-infusiondrug-2,notebook,380,patients,patients:380,1,1.0
+nb-intakeoutput-2,notebook,350,patients,patients:350,1,1.0
+nb-lab-3,notebook,335,patients,patients:335,1,1.0
+nb-lab-4,notebook,315,patients,patients:315,9,10.0
+nb-medication-2,notebook,350,identifiable,identifiable:350,1,1.0
+nb-medication-3,notebook,375,identifiable,identifiable:375,1,1.0
+nb-medication-4,notebook,305,identifiable,identifiable:305,1,1.0
+nb-medication-5,notebook,395,patients,patients:324 empty:71,1,1.5
+nb-medication-6,notebook,370,patients,patients:359 empty:11,1,2.0
+nb-medication-7,notebook,415,patients,patients:406 empty:9,1,2.0
+nb-medication-8,notebook,375,patients,patients:375,1,9.0
+nb-nursecharting-2,notebook,400,patients,patients:400,1,8.0
+nb-pasthistory-2,notebook,340,empty,empty:303 patients:37,1,1.0
+nb-pasthistory-3,notebook,365,identifiable,identifiable:365,1,1.0
+nb-pasthistory-4,notebook,315,patients,patients:315,1,7.0
+nb-patient-2,notebook,385,patients,patients:385,1,1.0
+nb-treatment-2,notebook,345,patients,patients:345,2,3.0
+nb-vitalaperiodic-2,notebook,355,patients,patients:355,5,7.0
+nb-vitalperiodic-2,notebook,290,patients,patients:290,5,7.0

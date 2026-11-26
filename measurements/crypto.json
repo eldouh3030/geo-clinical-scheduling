@@ -1,0 +1,44 @@
+{
+  "platform": {
+    "machine": "Windows-11-10.0.26300-SP0",
+    "processor": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+    "cpu_count": 6,
+    "python": "3.13.17",
+    "cryptography": "50.0.1",
+    "openssl": "OpenSSL 4.0.2 25 Aug 2026"
+  },
+  "aead": {
+    "aes-256-gcm": {
+      "encrypt": {
+        "fixed_s": 1.2448779930377815e-06,
+        "bytes_per_s": 3812522874.87748
+      },
+      "decrypt": {
+        "fixed_s": 1.2438062849134973e-06,
+        "bytes_per_s": 3786350859.9950604
+      }
+    },
+    "chacha20-poly1305": {
+      "encrypt": {
+        "fixed_s": 1.410760654633615e-06,
+        "bytes_per_s": 1923308259.3094265
+      },
+      "decrypt": {
+        "fixed_s": 1.4361147816316683e-06,
+        "bytes_per_s": 1966598949.7464914
+      }
+    }
+  },
+  "handshake": {
+    "x25519": {
+      "cpu_s": 0.00028876005859856946,
+      "x25519_s": 0.0001448969726567384,
+      "sign_s": 3.771557617326948e-05,
+      "verify_s": 0.00010614750976856158
+    },
+    "x25519mlkem768": {
+      "cpu_s": 0.0006212994140675221,
+      "mlkem768_s": 0.00033253935546895264
+    }
+  }
+}

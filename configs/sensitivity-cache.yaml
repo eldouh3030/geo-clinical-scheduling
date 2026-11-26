@@ -1,0 +1,18 @@
+# Sensitivity to the cache size (share of all partition bytes per node); 0.15 is the base value.
+name: sensitivity-cache
+workloads: [base-s1, base-s2, base-s3, base-s4, base-s5]
+simulator: {cache_fraction: 0.15, replicas: []}
+modes:
+  raw:       {decompose: false}
+  federated: {decompose: true, coordinator: cloud, merge_ms: 1.0}
+  residency: {decompose: true, coordinator: cloud, merge_ms: 1.0, rules: [residency]}
+sweep: {key: cache_fraction, values: [0.0, 0.15, 0.3]}
+loads: [0.9, 2.5]
+seed: 1
+parallel: 4              # runs at the same time; set to the number of processor cores
+reference: {policy: delay, window: 16, local_threshold: 0.8, delay_s: 0.5}
+reference_simulator: {cache_fraction: 0.15, replicas: [], decompose: false}
+policies:
+  - {policy: delay, window: 16, local_threshold: 0.8, delay_s: 0.5}
+  - {policy: wanaware}
+  - {policy: flow, window: 64, gamma: 1.0, retry_s: 0.05}

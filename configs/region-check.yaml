@@ -1,0 +1,18 @@
+# Per-region behaviour under federated execution with and without the residency rule.
+# Saves one file per run with every scheduled unit (python report.py regions region-check).
+name: region-check
+workloads: [base-s1, base-s2, base-s3, base-s4, base-s5]
+save_queries: true
+simulator: {cache_fraction: 0.15, replicas: []}
+modes:
+  federated: {decompose: true, coordinator: cloud, merge_ms: 1.0}
+  residency: {decompose: true, coordinator: cloud, merge_ms: 1.0, rules: [residency]}
+loads: [0.9, 1.5, 2.5]
+seed: 1
+parallel: 4              # runs at the same time; set to the number of processor cores
+reference: {policy: delay, window: 16, local_threshold: 0.8, delay_s: 0.5}
+reference_simulator: {cache_fraction: 0.15, replicas: [], decompose: false}
+policies:
+  - {policy: delay, window: 16, local_threshold: 0.8, delay_s: 0.5}
+  - {policy: wanaware}
+  - {policy: flow, window: 64, gamma: 1.0, retry_s: 0.05}

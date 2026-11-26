@@ -1,0 +1,19 @@
+# Per-region behaviour of the result-release rule (k = 10) against residency alone.
+# Saves one file per run with every scheduled unit (python report.py regions region-privacy).
+# Needs privacy.jsonl for base-s1 ... base-s5.
+name: region-privacy
+workloads: [base-s1, base-s2, base-s3, base-s4, base-s5]
+save_queries: true
+simulator: {cache_fraction: 0.15, replicas: []}
+modes:
+  residency: {decompose: true, coordinator: cloud, merge_ms: 1.0, rules: [residency]}
+  k10: {decompose: true, coordinator: cloud, merge_ms: 1.0, rules: [residency, min-group-10]}
+loads: [0.9, 1.5, 2.5]
+seed: 1
+parallel: 4
+reference: {policy: delay, window: 16, local_threshold: 0.8, delay_s: 0.5}
+reference_simulator: {cache_fraction: 0.15, replicas: [], decompose: false}
+policies:
+  - {policy: delay, window: 16, local_threshold: 0.8, delay_s: 0.5}
+  - {policy: wanaware}
+  - {policy: flow, window: 64, gamma: 1.0, retry_s: 0.05}

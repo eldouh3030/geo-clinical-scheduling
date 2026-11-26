@@ -1,0 +1,33 @@
+# Same as base, but 50% of non-patient queries span all regions.
+name: mix50
+seed: 2026
+
+topology:
+  nodes_per_site: 2      # data nodes inside each region (site)
+  buckets: 8             # each table on each node is split by patient id into this many files
+  site_slots: 4          # parallel query slots per data node
+  cloud_slots: 16        # the cloud node holds no patient data
+
+network:                 # used later by the simulator
+  intra_site_mbps: 1000  # LAN inside a site
+  inter_site_mbps: 100   # WAN between sites
+  cloud_mbps: 200        # site <-> cloud link
+  latency_ms: {intra_site: 0.5, inter_site: 20, cloud: 10}
+
+workload:
+  queries: 2000
+  kind_weights: {concept: 1.0, notebook: 1.0}   # per template
+  scope_weights: {region: 0.5, all: 0.5}        # for queries without a patient parameter
+  site_choice: data                             # pick regions in proportion to their data
+  patient_zipf: 0.0                             # 0 = every patient equally likely
+  exclude: []
+
+arrivals:                # two-state Markov-modulated Poisson process
+  # times are written in units of the mean gap between arrivals; the simulator
+  # sets the real arrival rate (the load) when it reads the workload
+  burst_factor: 4        # arrival rate during a burst = 4 x the normal rate
+  normal_len: 300        # a normal period lasts about 300 arrivals
+  burst_len: 50          # a burst lasts about 50 arrivals
+
+measure:
+  threads: 1             # one query = one slot when measuring processing time

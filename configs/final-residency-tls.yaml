@@ -1,0 +1,18 @@
+# Federated + residency with encryption in transit (AES-256-GCM + TLS 1.3 sessions).
+name: final-residency-tls
+workloads: [base-s1, base-s2, base-s3, base-s4, base-s5, base-s6, base-s7, base-s8, base-s9, base-s10]
+simulator: {cache_fraction: 0.15, replicas: [], decompose: true, coordinator: cloud, merge_ms: 1.0,
+            rules: [residency], overheads: [aes-gcm], session_costs: [tls13]}
+seed: 1
+parallel: 4              # runs at the same time; set to the number of processor cores
+# Same reference, loads and policies as final-raw / final-federated / final-residency,
+# so that all results are directly comparable (100% load = raw delay-scheduling saturation).
+reference: {policy: delay, window: 16, local_threshold: 0.8, delay_s: 0.5}
+reference_simulator: {cache_fraction: 0.15, replicas: [], decompose: false}
+loads: [0.3, 0.6, 0.9, 1.5, 2.5]
+policies:
+  - {policy: hash}
+  - {policy: fifo}
+  - {policy: delay, window: 16, local_threshold: 0.8, delay_s: 0.5}
+  - {policy: wanaware}
+  - {policy: flow, window: 64, gamma: 1.0, retry_s: 0.05}
